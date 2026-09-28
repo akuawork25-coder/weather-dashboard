@@ -1,0 +1,274 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --panel-alt: #1f2937;
+  --primary: #60a5fa;
+  --accent: #7dd3fc;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --good: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --shadow: rgba(15, 23, 42, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 40%, #0ea5e9 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.brand-mark {
+  font-size: 1.8rem;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form input {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  outline: none;
+}
+
+.search-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-form button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(17, 24, 39, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px var(--shadow);
+  padding: 22px;
+  backdrop-filter: blur(12px);
+}
+
+.current-card {
+  grid-column: 1 / -1;
+}
+
+.location-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.label {
+  margin: 0 0 6px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+#city-name {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+.weather-icon {
+  font-size: 2.6rem;
+  background: rgba(96, 165, 250, 0.15);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+}
+
+.temp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.temperature {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: bold;
+  line-height: 1;
+}
+
+.temperature-meta {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+.stat {
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.stat span {
+  color: var(--muted);
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+}
+
+.stat strong {
+  font-size: 1.1rem;
+}
+
+.section-header h3 {
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+}
+
+.hourly-forecast,
+.daily-forecast {
+  display: grid;
+  gap: 12px;
+}
+
+.hourly-forecast {
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+}
+
+.forecast-item {
+  background: rgba(148, 163, 184, 0.07);
+  border-radius: 14px;
+  padding: 14px 10px;
+  text-align: center;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.forecast-item .time {
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+}
+
+.forecast-item .icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.forecast-item strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.daily-forecast {
+  grid-template-columns: 1fr;
+}
+
+.daily-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 12px;
+  background: rgba(148, 163, 184, 0.07);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.daily-row .date {
+  font-weight: 600;
+}
+
+.daily-row .day-icon {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.daily-row .temps {
+  text-align: center;
+}
+
+@media (max-width: 820px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+
+  .daily-row {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-form {
+    width: 100%;
+  }
+
+  .search-form input {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
